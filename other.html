@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thamana Solutions</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      /* Smooth transitions for all theme changes */
+      *,
+      *::before,
+      *::after {
+        transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Enable smooth native scrolling behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #ffffff;
+        color: #1c1917;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+      }
+      .accent-text {
+        color: #a1784c;
+      }
+      .accent-bg {
+        background-color: #a1784c;
+      }
+      .accent-border {
+        border-color: #a1784c;
+      }
+
+      /* Dark mode overrides applied via root class toggled by JS */
+      .dark-mode body {
+        background-color: #1c1917;
+        color: #f5f5f4;
+      }
+      .dark-mode .text-stone-900 {
+        color: #f5f5f4;
+      }
+      .dark-mode .text-stone-800 {
+        color: #e7e5e4;
+      }
+      .dark-mode .text-stone-700 {
+        color: #d6d3d1;
+      }
+      .dark-mode .text-stone-600 {
+        color: #a8a29e;
+      }
+      .dark-mode .text-stone-400 {
+        color: #78716c;
+      }
+      .dark-mode .border-stone-100 {
+        border-color: #2e2a24;
+      }
+      .dark-mode .border-stone-200 {
+        border-color: #44403c;
+      }
+      .dark-mode .bg-stone-50\/50 {
+        background-color: rgba(44, 40, 36, 0.3);
+      }
+      .dark-mode .bg-stone-50 {
+        background-color: #2c2824;
+      }
+      .dark-mode .bg-stone-100 {
+        background-color: #2c2824;
+      }
+      .dark-mode .hover\:bg-stone-200:hover {
+        background-color: #44403c;
+      }
+
+      /* Adjust dark background for the sticky frosted glass nav */
+      .dark-mode nav {
+        background-color: rgba(28, 25, 23, 0.8) !important;
+        border-color: #2e2a24 !important;
+      }
+
+      /* Custom Slider Toggle Utilities */
+      .toggle-dot {
+        transform: translateX(0px);
+      }
+      .dark-mode .toggle-dot {
+        transform: translateX(20px);
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <nav
+      class="sticky top-0 z-50 backdrop-blur-md bg-white/80 max-w-full mx-auto px-6 py-5 flex justify-between items-center border-b border-stone-100 transition-all duration-200"
+    >
+      <div class="max-w-5xl w-full mx-auto flex justify-between items-center">
+        <a
+          href="#"
+          class="flex items-center gap-4 hover:opacity-80 transition-opacity"
+        >
+          <img src="dhamanalogo.png" alt="Thamana Logo" class="h-8 w-auto" />
+          <span class="text-lg font-medium tracking-tight text-stone-900"
+            >Thamana Solutions</span
+          >
+        </a>
+
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-medium text-stone-400 dark:text-stone-500"
+              >Light</span
+            >
+            <button
+              id="theme-slider"
+              class="w-11 h-6 bg-stone-200 dark:bg-stone-700 rounded-full p-0.5 relative flex items-center cursor-pointer focus:outline-none"
+              aria-label="Toggle theme layout"
+            >
+              <span
+                class="toggle-dot w-5 h-5 bg-white dark:bg-stone-900 rounded-full shadow-md block"
+              ></span>
+            </button>
+            <span class="text-xs font-medium text-stone-500 dark:text-stone-400"
+              >Dark</span
+            >
+          </div>
+
+          <a
+            href="#contact"
+            class="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+          >
+            Contact us &rarr;
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="max-w-3xl mx-auto px-6 py-24 md:py-32">
+      <h1
+        class="text-3xl md:text-5xl font-normal tracking-tight text-stone-900 leading-tight"
+      >
+        We build the digital tools your business needs to grow and run smoothly.
+      </h1>
+      <p
+        class="text-stone-600 mt-6 text-base md:text-lg leading-relaxed max-w-2xl"
+      >
+        From launching your online presence to setting up automated payment
+        tracking and sales dashboards, we handle the building so you can focus
+        on running your business. No confusing technical speak—just reliable
+        systems that work for you.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <a
+          href="#pricing"
+          class="accent-bg text-white px-6 py-3 rounded text-sm font-medium hover:bg-opacity-90 transition-all"
+        >
+          View packages
+        </a>
+        <a
+          href="#services"
+          class="bg-stone-100 text-stone-800 px-6 py-3 rounded text-sm font-medium hover:bg-stone-200 transition-all"
+        >
+          What we do
+        </a>
+      </div>
+    </header>
+
+    <section
+      id="services"
+      class="max-w-5xl mx-auto px-6 py-16 border-t border-stone-100"
+    >
+      <div class="mb-12">
+        <h2 class="text-2xl font-medium text-stone-900">
+          What we do for your business
+        </h2>
+        <p class="text-stone-600 text-sm mt-1">
+          Practical digital solutions to simplify your daily commercial
+          operations.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600"
+              alt="African retail sales clerk using terminal"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Retail
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            Point of Sale (POS) Systems
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Keep track of your retail inventory, physical sales records, and
+            worker activities in one place. We setup clear business systems so
+            you always know your daily profits.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=600"
+              alt="African professional presenting creative work portfolio"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Branding
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            Portfolio Websites
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Showcase your past work, skills, and corporate experience to global
+            clients. We craft neat, elegant personal profiles and corporate
+            pages that build immediate trust.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=600"
+              alt="Clean simple setup layout design"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Launch
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            Simple Digital Projects
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Need a single landing page, simple business card page, or basic
+            promotional setup? We deliver light, fast online pages to launch
+            your fresh business ideas quickly.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"
+              alt="SME trade hub operations in Nairobi"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Ecosystems
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            SME Integrated Suites
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Connect all your business operations together. We tie stock levels,
+            staff attendance logs, receipt generation, and client tracking into
+            a single easy dashboard.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=600"
+              alt="Person managing digital mobile accounting transactions"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Fintech
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            Loaning & Lending Platforms
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Automate your chama records, member savings logs, or simple credit
+            operations. We build safe internal ledger records to register loan
+            requests and repayments accurately.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
+              alt="African customers selecting items online"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Logistics
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            Product Ordering Apps
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Allow your customers to select items, specify quantities, and place
+            orders online. We organize your raw orders so your dispatch crew
+            avoids shipping delivery mistakes.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600"
+              alt="Team members coordinating on internal communication systems"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Messaging
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            Communication Utilities
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Keep your remote staff or field branches closely connected. We set
+            up simple internal notification networks, chat logs, and client SMS
+            feedback links.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="aspect-video w-full overflow-hidden rounded-lg bg-stone-100 mb-6"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600"
+              alt="Secure digital corporate records overview"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3
+            class="text-sm font-semibold uppercase tracking-wider accent-text"
+          >
+            Customized
+          </h3>
+          <h4 class="text-lg font-medium text-stone-900 mt-2">
+            And Much More...
+          </h4>
+          <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+            Have a unique operational problem? We listen carefully to your
+            traditional offline processes and build tailored software solutions
+            designed around your specific routine.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="team"
+      class="max-w-5xl mx-auto px-6 py-20 border-t border-stone-100"
+    >
+      <div class="mb-12">
+        <h2 class="text-2xl font-medium text-stone-900">Our Leadership Team</h2>
+        <p class="text-stone-600 text-sm mt-1">
+          The people who make sure your business software is delivered securely
+          and on time.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div
+            class="aspect-[4/5] w-full overflow-hidden rounded-lg bg-stone-100 mb-4"
+          >
+            <img
+              src="My image.jpeg"
+              alt="Emmanuel Makori"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="text-lg font-medium text-stone-900">Emmanuel Makori</h3>
+          <p class="text-sm accent-text font-medium">Chief Executive Officer</p>
+        </div>
+        <div>
+          <div
+            class="aspect-[4/5] w-full overflow-hidden rounded-lg bg-stone-100 mb-4"
+          >
+            <img
+              src="abdimalik.jpeg"
+              alt="Abdimilik Abdinoor"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="text-lg font-medium text-stone-900">Abdimilik Abdinoor</h3>
+          <p class="text-sm accent-text font-medium">
+            Marketing & Sales Manager
+          </p>
+        </div>
+        <div>
+          <div
+            class="aspect-[4/5] w-full overflow-hidden rounded-lg bg-stone-100 mb-4"
+          >
+            <img
+              src="johnson.jpeg"
+              alt="Johnson Kuria"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="text-lg font-medium text-stone-900">Johnson Kuria</h3>
+          <p class="text-sm accent-text font-medium">
+            Technical & Product Manager
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="pricing"
+      class="max-w-5xl mx-auto px-6 py-20 border-t border-stone-100"
+    >
+      <div class="mb-12">
+        <h2 class="text-2xl font-medium text-stone-900">
+          Straightforward setup tiers
+        </h2>
+        <p class="text-stone-600 text-sm mt-1">
+          Simple, project-based pricing to help your business get started or
+          scale up.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div
+          class="border border-stone-200 bg-stone-50/50 p-8 rounded-lg flex flex-col justify-between"
+        >
+          <div>
+            <h3 class="text-lg font-medium text-stone-900">Starter — Launch</h3>
+            <p class="text-stone-600 text-sm mt-2">
+              Perfect for launching a brand new website, simple online
+              presentation page, or a professional business profile to start
+              receiving customer inquiries quickly.
+            </p>
+          </div>
+          <div class="mt-8">
+            <div class="text-2xl font-medium text-stone-900">
+              KES 15,000 – 30,000
+            </div>
+            <a
+              href="#contact"
+              class="block text-center bg-stone-100 text-stone-800 mt-4 py-2.5 rounded text-sm font-medium hover:bg-stone-200 transition-colors"
+              >Choose Launch</a
+            >
+          </div>
+        </div>
+        <div
+          class="border accent-border bg-stone-50/50 p-8 rounded-lg flex flex-col justify-between relative"
+        >
+          <div>
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-medium text-stone-900">Growth — Scale</h3>
+              <span
+                class="text-xs px-2 py-0.5 accent-bg text-white rounded font-medium"
+                >Complete</span
+              >
+            </div>
+            <p class="text-stone-600 text-sm mt-2">
+              For established businesses needing custom internal dashboards,
+              automated stock tracking, client records databases, and full
+              M-Pesa payment records integration.
+            </p>
+          </div>
+          <div class="mt-8">
+            <div class="text-2xl font-medium text-stone-900">
+              KES 35,000 – 80,000
+            </div>
+            <a
+              href="#contact"
+              class="block text-center accent-bg text-white mt-4 py-2.5 rounded text-sm font-medium hover:bg-opacity-90 transition-colors"
+              >Choose Scale</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="max-w-xl mx-auto px-6 py-24 border-t border-stone-100 text-center"
+    >
+      <div
+        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-stone-50 text-stone-700 mb-6 border border-stone-100"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+          />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-medium text-stone-900">Email Us</h2>
+      <p class="text-stone-600 text-sm mt-2 max-w-sm mx-auto leading-relaxed">
+        Ready to start your project or have questions? Send your specifications
+        directly to our office inbox.
+      </p>
+      <div class="mt-8">
+        <a
+          href="mailto:dhamana@gmail.com"
+          class="inline-block accent-bg text-white px-8 py-3.5 rounded text-sm font-medium hover:bg-opacity-90 transition-all shadow-sm"
+        >
+          dhamana@gmail.com
+        </a>
+      </div>
+    </section>
+
+    <footer
+      class="max-w-5xl mx-auto px-6 py-12 border-t border-stone-100 flex justify-between items-center text-xs text-stone-400"
+    >
+      <div>&copy; 2026 Thamana Solutions. All rights reserved.</div>
+      <div>Built for growth.</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
